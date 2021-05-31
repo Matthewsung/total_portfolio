@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.w_1440{
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    background: pink;
+}
