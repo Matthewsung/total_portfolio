@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #0a4b09;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+        font-size: 55px;
+        fill: #fff;
+        font-family: AdobeGothicStd-Bold, "Adobe Gothic Std";
+      }
+    </style>
+  </defs>
+  <text id="안녕하세요_웹퍼블리셔_성주영입니다." data-name="안녕하세요     웹퍼블리셔       성주영입니다." class="cls-1" x="37" y="54">안녕하세요<tspan x="37" dy="70.015">    웹퍼블리셔</tspan><tspan x="37" dy="70.015">      성주영입니다.</tspan></text>
+</svg>

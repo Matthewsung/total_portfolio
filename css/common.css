@@ -1,6 +1,7 @@
-body{
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 .w_1440{
     max-width: 1440px;
@@ -9,5 +10,6 @@ body{
     position: relative;
 }
 .wrap{
-    
+    /* background: url(../img/them.JPG) no-repeat center; */
+    /* background: url(../img/them2.JPG) no-repeat center / cover; */
 }

@@ -45,7 +45,21 @@ $(document).ready(function(){
 
 
 
+function sec_1_circle(){
+    const sec_1_cir = document.querySelector('#sec_1_cir');
+    const ctx = sec_1_cir.getContext('2d');
+    const start_X = sec_1_cir.clientWidth;
+    const start_Y = sec_1_cir.clientHeight;
+    
+    ctx.beginPath();
+    ctx.fillStyle="#849994"
+    ctx.bezierCurveTo(500,400,50,400,0,0)
+    ctx.lineTo(500,0)
+    ctx.fill();
 
+    requestAnimationFrame(sec_1_circle)
+}
+sec_1_circle()
 
 
 
