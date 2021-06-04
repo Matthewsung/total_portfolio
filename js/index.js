@@ -33,33 +33,29 @@ $(document).ready(function(){
 
 //////       만드는중      /////////
 
-// const hello = document.querySelector('.sec_1_hello');
-// const ctx = hello.getContext('2d');
-// ctx.font = "48px serif";
-// ctx.strokeText("안녕하세요",30, 50)
+
+
+// sec_1원
+let win_W = window.innerWidth / 2;
+document.querySelector('#sec_1_cir1').setAttribute('width',win_W)
+document.querySelector('#sec_1_cir1').setAttribute('height',win_W)
 
 
 
 
-
-
-
-
-function sec_1_circle(){
-    const sec_1_cir = document.querySelector('#sec_1_cir');
+function sec_1_circle(id,color,pos_X,pos_Y,r){
+    const sec_1_cir = document.querySelector(id);
     const ctx = sec_1_cir.getContext('2d');
-    const start_X = sec_1_cir.clientWidth;
-    const start_Y = sec_1_cir.clientHeight;
-    
+
     ctx.beginPath();
-    ctx.fillStyle="#849994"
-    ctx.bezierCurveTo(500,400,50,400,0,0)
-    ctx.lineTo(500,0)
+    ctx.fillStyle = color;
+    ctx.arc(pos_X, pos_Y, r, 0 , 2*Math.PI,true);
     ctx.fill();
-
-    requestAnimationFrame(sec_1_circle)
 }
-sec_1_circle()
+sec_1_circle('#sec_1_cir1', "#fff", win_W/2, win_W/2, win_W/2);
+sec_1_circle('#sec_1_cir2', "#bed8ef", 200, 200, 200);
+sec_1_circle('#sec_1_cir3', "#053f73", 100, 100, 100);
+sec_1_circle('#sec_1_cir4', "#bed8ef", 50, 50, 50);
 
 
 
@@ -71,55 +67,36 @@ sec_1_circle()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const item_1 = document.querySelector('#item_1');
-const context = item_1.getContext('2d');
-const cx = item_1.clientWidth / 2;
-const cy = item_1.clientHeight / 2;
-let tmp_raf;
-let start = 1.5 * Math.PI;
-let end = start;
-let score = Number(document.querySelector('.item_score_box').innerText.split("%")[0]) * 0.01;
-
-
-function percent(){
-    end +=  Math.PI / 50 ;
-    context.beginPath();
-    context.arc(cx, cx, cx*0.8, start, end ,false);
-    context.lineWidth ="20"
-    context.lineCap="round"
-    context.strokeStyle = "red"
-    context.stroke();
-    tmp_raf=requestAnimationFrame(percent)
-    if(end >= start +  2*Math.PI * score  ){ // 0.5가 퍼센트
-        cancelAnimationFrame(tmp_raf)
+let percent_index=0;
+let percent_start;
+function percent(id){
+    const item_score = document.querySelector(id);
+    const ctx = item_score.getContext('2d');
+    const real_score = Number(document.querySelector(id).nextElementSibling.innerText.split("%")[0] / 100);
+    ctx.beginPath();
+    ctx.fillRect(0,0,percent_index,40);
+    ctx.fill()
+    percent_index +=8;
+    percent_start = requestAnimationFrame(percent)
+    if(percent_index >= item_score.clientWidth * real_score){
+        cancelAnimationFrame(percent_start)
     }
 }
+percent('#item_score_1')
+percent_start = requestAnimationFrame(percent)
+cancelAnimationFrame(percent_start)
 
-// requestAnimationFrame(percent)
-    percent()
+
+
+
+
+
+
+
+
+
+
+
 
 
 

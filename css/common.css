@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .w_1440{
     max-width: 1440px;
     height: 100%;
