@@ -32,21 +32,18 @@ background: orange;
     font-size: 20px;
     cursor: pointer;
     transition: all 0.3s;
+    perspective: 600px;
 }
-
 .menu_li:hover {
     background: #08196d;
     color: #fff;
+    transform: rotateX(360deg);
 }
-
-
-
 section{
     width: 100%;
     height: 100vh;
     position: relative;
-    border: 1px solid;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* sec_1 */
@@ -105,14 +102,14 @@ section{
 
 .sec_1_txt2{
     position: absolute;
-    left: 50%;
-    top: 60%;
+    left: 62%;
+    top: 70%;
     transform: translateX(-50%);
     font-size: 40px;
 }
 .sec_1_c_img{
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     border-radius: 50%;
     box-shadow: 0 0 20px 0 rgba(184, 178, 178, 0.7);
     position: absolute;
@@ -232,7 +229,7 @@ section{
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background: #1f633e;
+    background: #0c76d6;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -373,10 +370,181 @@ section{
 }
 
 /* section 3 */
-#sec_3_cir{
+.container_L{
+    width: 60%;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    
+}
+.desk{
+    width: 800px;
     position: absolute;
-    right: 0;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%) scale(0);
+    transition: transform 1s;
+}
+.desk img{
+    width: 100%;
+}
+.inner_img {
+    width: 725px;
+    height: 403px;
+    background-position: top;
+    position: absolute;
+    left: 35px;
+    top: 33px;
+    overflow: hidden;
+}
+.inner_img img{
+    position: absolute;
+    left: 0;
     top: 0;
 }
 
-/* 포트폴리오 */
+.tablet{
+    width: 200px;
+    height: 260px;
+    position: absolute;
+    left: 60%;
+    top: 55%;
+    transform: translateX(180%);
+    transition: transform 0.7s;
+}
+.sec_3 .tablet{
+    background: url(../img/baraboda_main_768.png) no-repeat center 23px / cover;
+    background-size: 170px;
+}
+.tablet img{
+    width: 100%;
+}
+.phone{
+    width: 90px;
+    height: 130px;
+    position: absolute;
+    left: 78%;
+    top: 70%;
+    transform: translateX(220%);
+    transition: transform 0.7s;
+}
+.sec_3 .phone{
+    background: url(../img/baraboda_main.png) no-repeat center 12px / cover;
+    background-size: 70px;
+
+}
+
+.phone img{
+    width: 100%;
+}
+.container_R{
+    width: 40%;
+    height: 100%;
+    float: left;
+    font-size: 25px;
+    padding-top: 140px;
+}
+.c_title{
+    width: 150px;
+    color: #fff;
+    background: #08196d;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 20px;
+    display: inline-block;
+}
+.c_content{
+    height: 50px;
+    line-height: 50px;
+    margin: 10px 0;
+}
+.c_goToWeb{
+    width: 100%;
+    height: 60px;
+    font-size: 23px;
+    font-weight: 500;
+
+    border: 1px solid;
+    border-radius: 15px;
+    outline: none;
+
+    background: none;
+    margin-top: 100px;
+    cursor: pointer;
+}
+
+/* sec_4 */
+
+#sec_4_cir1{
+    position: absolute;
+    left: 55%;
+    top: -20%;
+    animation :  sec_4_top 8s infinite 
+}
+@keyframes sec_4_top{
+    0%{transform: translate(0px);}
+    50%{transform: translate(55px, 25px);}
+    100%{transform: translate(0px);}
+}
+#sec_4_cir2{
+    position: absolute;
+    left: 80%;
+    top: 60%;
+    animation: sec_4_2 5s infinite, sec_4_top 8s infinite;
+}
+@keyframes sec_4_2{
+    0%{top: 60%;}
+    50%{top: 70%;}
+    100%{top: 60%;}
+}
+#sec_4_cir3{
+    position: absolute;
+    left: 75%;
+    top: 80%;
+    animation :sec_4_3 10s infinite, sec_4_3_2 5s infinite linear;
+}
+@keyframes sec_4_3{
+    0%{transform: translateX(0);}
+    50%{transform: translateX(-300px);}
+    100%{transform: translateX(0);}
+}
+@keyframes sec_4_3_2{
+    0%{top: 80%;}
+    34%{top: 75%;}
+    70%{top: 85%;}
+    100%{top: 80%;}
+}
+.sec_4 .tablet{
+    background: url(../img/drg_main_768.png) no-repeat center 23px / cover;
+    background-size: 170px;
+}
+.sec_4 .phone{
+    background: url(../img/drg_main_420.png) no-repeat center 12px / cover;
+    background-size: 70px;
+
+}
+
+
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 200px;
+    padding: 30px 0 ;
+    color: #053f73;
+    background: #bed8ef;
+    font-size: 18px;
+    text-align: right;
+    
+    box-shadow: 0 0 3px 0;
+}
+.name{
+    font-size: 35px;
+}
+.phone_number{
+    margin: 15px 0 5px;
+}
+.phone_number span{
+    transform: rotate(20deg);
+}

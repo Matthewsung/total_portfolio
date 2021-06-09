@@ -47,7 +47,7 @@ $(document).ready(function(){
         ctx.fillStyle="#053f73"
         ctx.fillRect(0,0,percent_index,40);
         ctx.fill()
-        percent_index +=1;
+        percent_index +=0.5;
         percent_start = requestAnimationFrame(function(){percent(id)})
         if(percent_index >= item_score.clientWidth * real_score){
             cancelAnimationFrame(percent_start)
@@ -69,29 +69,28 @@ $(document).ready(function(){
     sec_circle('#sec_2_cir2', "#053f73", 75, 75, 75);
     sec_circle('#sec_2_cir3', "#bed8ef", 350, 350, 350);
     //sec_2 퍼센트
-    
+    sec_circle('#sec_4_cir1', "#bed8ef", 300, 300, 300);
+    sec_circle('#sec_4_cir2', "#053f73", 100, 100, 100);
+    sec_circle('#sec_4_cir3', "#bed8ef", 35, 35, 35);
 
 
 //////       만드는중      /////////
 
-// 마우스 따라 움직이는 원
 
+$('.container_L').on('mouseenter',function(){
+    let pos_Y =$(this).find('.inner_img img').height() - 403
+    $(this).find('.inner_img img').stop().animate({top:-1*pos_Y+"px"},10000 , "linear");
+})
+$('.container_L').on('mouseleave',function(){
+    $('.inner_img img').stop();
+})
 
-// $('.sec_2').on('mousemove',function(event){
-//     let sec_2_W = $('.sec_2').width() / 2 ;
-//     let sec_2_H = $('.sec_2').height() / 2;
-//     let m_pos_X = (event.clientX - sec_2_W) * 0.07;
-//     let m_pos_Y = (event.clientY - sec_2_H) * 0.07;
-
-//     $('#sec_2_cir1').css({transform: "translate("+ -1*m_pos_X + "px," + -1*m_pos_Y + "px)"})
-//     $('#sec_2_cir2').css({transform: "translate("+ m_pos_X + "px," + m_pos_Y + "px)"})
-// })
 
 
 let chk_percent =true;
 $(window).scroll(function(){
     let sec_1_h = $('.sec_1').height() * 0.65;
-    // console.log(sec_1_h)
+    // sec_2 스크롤 이벤트
     if($(window).scrollTop() >= sec_1_h){
         $('.info_pan').css({animation :"back_pan 1s forwards"});
         $('.info_outer_cir').css({animation: "circle_big 0.25s 0.75s forwards"});
@@ -108,7 +107,28 @@ $(window).scroll(function(){
             percent('#item_score_7');
         }
     }
-
+    // sec_3 스크롤 이벤트
+    let sec_2_o_top = $('.sec_3').offset().top * 0.7;
+    if($(window).scrollTop() >= sec_2_o_top){
+        $('.sec_3 .desk').css({transform: "translateX(-50%) scale(1)"});
+        setTimeout(() => {
+            $('.sec_3 .tablet').css({transform: "translateX(0)"});
+        }, 200);
+        setTimeout(() => {
+            $('.sec_3 .phone').css({transform: "translateX(0)"});
+        }, 700);
+    }
+    // sec_4 스크롤 이벤트
+    let sec_3_o_top = $('.sec_4').offset().top * 0.7;
+    if($(window).scrollTop() >= sec_3_o_top){
+        $('.sec_4 .desk').css({transform: "translateX(-50%) scale(1)"});
+        setTimeout(() => {
+            $('.sec_4 .tablet').css({transform: "translateX(0)"});
+        }, 200);
+        setTimeout(() => {
+            $('.sec_4 .phone').css({transform: "translateX(0)"});
+        }, 700);
+    }
 
 })
 
