@@ -17,7 +17,6 @@ $(document).ready(function(){
                 },5000);
                 Info_index = 0 ;
                 tmp_motto=""; 
-                
             }
         },100)
     }
